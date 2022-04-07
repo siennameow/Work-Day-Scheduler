@@ -50,7 +50,7 @@ var userMessage = $(".textarea")
 // function that add user message input to the local storage
 function addInfo (n) {
     var message =$(userMessage.parent().eq(n).children().eq(1)).val();
-    localStorage.setItem("Todo-" + n, message);
+    localStorage.setItem("Todo-" + (n+hour.length) +":00", message);
 }
 
 //WHEN I refresh the page
@@ -58,7 +58,7 @@ function addInfo (n) {
 
 //function that get user message from local storage and render it when page loads
 function renderInfo(n) {
-    var userInput =localStorage.getItem("Todo-" + n);
+    var userInput =localStorage.getItem("Todo-" + (n+hour.length)+":00");
     $(userMessage.parent().eq(n).children().eq(1)).text(userInput); 
 }
 
