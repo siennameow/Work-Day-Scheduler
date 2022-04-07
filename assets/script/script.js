@@ -11,8 +11,6 @@ var saveBtn = $(".saveBtn");
 
 $("#currentDay").text(timeHeading);
 
-
-
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
     //standard 9am-5pm & create rows in html.
@@ -24,7 +22,7 @@ var hour = $(".hour");
 //make the first timeblock row shows 9:00am, so always start from the hour(8) of the current day.
 var hourStart = moment().hour(8).minutes(0).seconds(0).milliseconds(0);
 
- //write a function using a "if..else if ...else" to determine the time is past, present or future
+ //function using a "if..else if ...else" to determine the time is past, present or future
 for (var i = 0; i < hour.length; i++ ) {
     var hourBlock = hourStart.add(1,"h")
     //using .isBefore .isSame and .isAfter to compare the timeblock row to current time.
@@ -42,58 +40,38 @@ for (var i = 0; i < hour.length; i++ ) {
 
 // WHEN I click into a timeblock
 // THEN I can enter an event
-    //a variable that collect user input
+    
+//a variable that collect user input
 var userMessage = $(".textarea")
-console.log(userMessage)
+
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
 
-// get user message from local storage
-function getInfo (n) {
-    var userInput =localStorage.getItem("Todo-" + n);
-    
-    if (userInput !== null ){
-        todoList = JSON.parse(userInput);
-        return todoList;
-    } else {
-        todoList = [];
-    }
-    return todoList;
-};
-
-// add user message input to the local storage
-
-
-function addInfo (n,m) {
-    var addedList = [];
-    addedList.push(m);
-    localStorage.setItem("Todo-" + n, JSON.stringify(addedList));
-};
-
-function saveInfo (n) {
+// function that add user message input to the local storage
+function addInfo (n) {
     var message =$(userMessage.parent().eq(n).children().eq(1)).val();
-    console.log(userMessage)
-    addInfo(n,message);
+    localStorage.setItem("Todo-" + n, message);
 }
-    //user input can be saved in local storage
-    //add event listerner to the save btn
 
-// WHEN I refresh the page
+//WHEN I refresh the page
 // THEN the saved events persist
-    //render the local storage data when page loads
 
+//function that get user message from local storage and render it when page loads
 function renderInfo(n) {
-    $(userMessage.parent().eq(n).children().eq(1)).text(getInfo);
-    
+    var userInput =localStorage.getItem("Todo-" + n);
+    $(userMessage.parent().eq(n).children().eq(1)).text(userInput); 
 }
-renderInfo();
 
+//function to add event listener to each save button
+function saveInfo(n){
+    $(saveBtn.parent().eq(n).children().eq(2)).on("click", function(event){
+        event.preventDefault();
+        addInfo(n);
+})};
 
-// $(saveBtn.parent().eq(n).children().eq(2)).on("click",saveInfo);
-
-
-for (var i = 0; i< hour.length; i++){
+//every time refresh page, do a for loop to render and save Info 
+for (var i= 0;i<hour.length;i++){
     renderInfo(i);
     saveInfo(i);
-    $(saveBtn.parent().eq(i).children().eq(2)).on("click",saveInfo(i));
 }
+
