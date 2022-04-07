@@ -28,13 +28,13 @@
         //using .isBefore .isSame and .isAfter to compare the timeblock row to current time.
         if (hourBlock.isBefore(hourNow)) {
             //add css class to the timeblock row respectively
-                $(timeBlock.children().eq(i)).addClass("past")
+                $(timeBlock[i]).addClass("past")
         } 
             else if (hourBlock.isSame(hourNow)) {
-                $(timeBlock.children().eq(i)).addClass("present")
+                $(timeBlock[i]).addClass("present")
         }      
             else { 
-                $(timeBlock.children().eq(i)).addClass("future")
+                $(timeBlock[i]).addClass("future")
         }
     }
     
