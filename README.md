@@ -108,7 +108,7 @@ for (var i = 0; i < hourLength; i++ ){
 
 The link of the webpage is: https://siennameow.github.io/Work-Day-Scheduler/
 
-- Step 1: Load the webpage.
+- Step 1: Load the webpage. You'll see today's day and current time.
 - Step 2 :You'll see the past hour timeblock in color grey, the present timeblock in yellow, and the future timeblock in green.
 - Step 3 :Write down your event plan in the text area.
 - Step 4 :Click save button (icon of a file) and your event will save to the local storage.
