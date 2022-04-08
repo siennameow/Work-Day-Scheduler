@@ -17,36 +17,36 @@ $("#currentDay").text(timeHeading);
 var hourLength =9;
 // A for loop to add row in the container section and append with buttons, textarea and hours
 for (var i = 0; i < hourLength; i++ ){
-            var eventColumn = $("<div>");
-        eventColumn.addClass("row  time-block");
+    var eventColumn = $("<div>");
+    eventColumn.addClass("row  time-block");
         
-        var hour = $("<div>")
-        hour.addClass("hour col-1");
-        hour.text((i+hourLength) + ":00")
+    var hour = $("<div>")
+    hour.addClass("hour col-1");
+    hour.text((i+hourLength) + ":00")
 
-        var userMessage = $("<textarea>");
-        userMessage.addClass("textarea col-9 description");
+    var userMessage = $("<textarea>");
+    userMessage.addClass("textarea col-9 description");
 
-        var saveBtn = $("<button>");
-        saveBtn.addClass("saveBtn col-1");
+    var saveBtn = $("<button>");
+    saveBtn.addClass("saveBtn col-1");
 
-        var iconSave =$("<i>");
-        iconSave.addClass("far fa-save");
+    var iconSave =$("<i>");
+    iconSave.addClass("far fa-save");
 
-        var deleteBtn = $("<button>");
-        deleteBtn.addClass("deleteBtn col-1");
+    var deleteBtn = $("<button>");
+    deleteBtn.addClass("deleteBtn col-1");
         
-        var iconDelete = $("<i>");
-        iconDelete.addClass("fas fa-trash-alt");
+    var iconDelete = $("<i>");
+    iconDelete.addClass("fas fa-trash-alt");
 
 
-        saveBtn.append(iconSave);
-        deleteBtn.append(iconDelete)
-        eventColumn.append(hour);
-        eventColumn.append(userMessage);
-        eventColumn.append(saveBtn);
-        eventColumn.append(deleteBtn)
-        $(".container").append(eventColumn);
+    saveBtn.append(iconSave);
+    deleteBtn.append(iconDelete)
+    eventColumn.append(hour);
+    eventColumn.append(userMessage);
+    eventColumn.append(saveBtn);
+    eventColumn.append(deleteBtn)
+    $(".container").append(eventColumn);
 }
 
 var hour = $(".hour");
@@ -58,7 +58,7 @@ var userMessage = $(".textarea")
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
 //make the first timeblock row shows 9:00am, so always start from the hour(8) of the current day.
-var hourStart = moment().hour(8+4).minutes(0).seconds(0).milliseconds(0);
+var hourStart = moment().hour(8).minutes(0).seconds(0).milliseconds(0);
     
 //function using a "if..else if ...else" to determine the time is past, present or future
 for (var i = 0; i < hour.length; i++ ) {
@@ -76,7 +76,7 @@ for (var i = 0; i < hour.length; i++ ) {
             $(eventColumn[i]).addClass("future")
     }
 }
-    
+
 // WHEN I click into a timeblock
 // THEN I can enter an event
         
