@@ -2,11 +2,9 @@
 
 ## Description 📝 
 
-Successful people constantly evaluate what they're spending their time on. Don’t let your tasks overwhelm you. Daily planning can help you save precious time and focus on your most critical goals.
+Successful people constantly evaluate what they're spending their time on. Don’t let your tasks overwhelm you. Daily planning can help you save precious time and focus on your most critical goals. With Work Day Scheduler, the ultimate daily planner, you can quickly run through your daily to-do’s and prioritize them so you’re focused only on the things that matter.
 
-With Work Day Scheduler, the ultimate daily planner, you can quickly run through your daily to-do’s and prioritize them so you’re focused only on the things that matter.
-
-Use this tool to write down today’s tasks by hour and save them as todos.Or you can edit or delete them when you complete. Each timeblock is color coded to indicate whether it is in the past, present, or future. This way, you’ll stay focused on your mission critical goals and win the challenges you really care about.
+Use this tool to write down today’s tasks by hour and save them as todos. You can also edit or delete the task when you complete. Each timeblock is color coded to indicate whether it is in the past, present, or future. This way, you’ll stay focused on your mission critical goals and win the challenges you really care about.
 
 The webpage is easy for you to access through one link : https://siennameow.github.io/Work-Day-Scheduler/ and is designed to work with different screen sizes as you need.
 
@@ -27,6 +25,7 @@ Plan your day in seconds. Run your day, don’t let it run you!
 ## Webpage Preview ⭐
  
  
+ ![Work Day Scheduler](https://user-images.githubusercontent.com/101283174/162354325-7bdad536-41ee-4526-afb6-15eca08440eb.gif)
 
 
 
