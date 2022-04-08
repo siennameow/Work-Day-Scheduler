@@ -3,38 +3,68 @@
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
-    //set timmer using moment.js
-    var timeHeading = moment().format("LLLL");
-    var timeBlock =$(".time-block");
-    var hourNow =moment().minutes(0).seconds(0).milliseconds(0);
-    var saveBtn = $(".saveBtn");
-    
-    $("#currentDay").text(timeHeading);
+
+//set timmer using moment.js
+var timeHeading = moment().format("LLLL");
+var hourNow =moment().minutes(0).seconds(0).milliseconds(0);
+
+$("#currentDay").text(timeHeading);
     
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
-    //standard 9am-5pm & create rows in html.
-    
+
+// Standard 9am-5pm working hour, total length is 9hours
+var hourLength =9;
+// A for loop to add row in the container section and append with buttons, textarea and hours
+for (var i = 0; i < hourLength; i++ ){
+            var eventColumn = $("<div>");
+        eventColumn.addClass("row  time-block");
+        
+        var hour = $("<div>")
+        hour.addClass("hour col-1");
+        hour.text((i+hourLength) + ":00")
+
+        var userMessage = $("<textarea>");
+        userMessage.addClass("textarea col-10 description");
+
+        var saveBtn = $("<button>");
+        saveBtn.addClass("saveBtn col-1");
+
+        var icon =$("<i>");
+        icon.addClass("far fa-save");
+
+
+        saveBtn.append(icon);
+        eventColumn.append(hour);
+        eventColumn.append(userMessage);
+        eventColumn.append(saveBtn);
+        $(".container").append(eventColumn);
+}
+
+var hour = $(".hour");
+var saveBtn = $(".saveBtn");
+var eventColumn=$(".time-block")
+
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-    
-var hour = $(".hour");
+
 //make the first timeblock row shows 9:00am, so always start from the hour(8) of the current day.
 var hourStart = moment().hour(8).minutes(0).seconds(0).milliseconds(0);
     
 //function using a "if..else if ...else" to determine the time is past, present or future
 for (var i = 0; i < hour.length; i++ ) {
+
     var hourBlock = hourStart.add(1,"h")
     //using .isBefore .isSame and .isAfter to compare the timeblock row to current time.
     if (hourBlock.isBefore(hourNow)) {
         //add css class to the timeblock row respectively
-            $(timeBlock[i]).addClass("past")
+            $(eventColumn[i]).addClass("past")
     } 
     else if (hourBlock.isSame(hourNow)) {
-            $(timeBlock[i]).addClass("present")
+            $(eventColumn[i]).addClass("present")
     }      
          else { 
-            $(timeBlock[i]).addClass("future")
+            $(eventColumn[i]).addClass("future")
     }
 }
     
@@ -57,7 +87,9 @@ function saveInfo(n){
         var message =$(userMessage[n]).val();
         if( message!== "" ) {
         localStorage.setItem("Todo-" + (n+hour.length) +":00", message);
-    } 
+    } else {
+        localStorage.removeItem("Todo-" + (n+hour.length) +":00");
+    }
 })};
 
 //WHEN I refresh the page
