@@ -2,7 +2,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+  height: 100vh;
+  background-image: url("https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/graphicstock-keyboard-with-office-supplies-on-white-desk_S8ign37mZ_SB_PM.jpg");
 }
+
 
 /*added to textarea*/
 textarea{
@@ -21,6 +26,9 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+h1, p {
+  text-shadow:3px 3px white;
 }
 
 /*here is for textarea*/
@@ -55,21 +63,19 @@ textarea{
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #d6be8d;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #b0d09f;
   color: white;
 }
 
 /*added to save button*/
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: #87b1ba;
   color: white;
 }
 
@@ -77,11 +83,11 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: #87b1ba;
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn i:hover, .deleteBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }

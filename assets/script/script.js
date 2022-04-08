@@ -58,7 +58,7 @@ var userMessage = $(".textarea")
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
 //make the first timeblock row shows 9:00am, so always start from the hour(8) of the current day.
-var hourStart = moment().hour(8).minutes(0).seconds(0).milliseconds(0);
+var hourStart = moment().hour(8+4).minutes(0).seconds(0).milliseconds(0);
     
 //function using a "if..else if ...else" to determine the time is past, present or future
 for (var i = 0; i < hour.length; i++ ) {
