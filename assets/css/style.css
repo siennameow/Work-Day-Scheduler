@@ -22,13 +22,18 @@ textarea{
 /*already pre-added to the header*/
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: rgba(211,211,211,0.5);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+
 }
 h1, p {
   text-shadow:3px 3px white;
+}
+
+h1 {
+  font-family: 'Original Surfer', cursive;
 }
 
 /*here is for textarea*/
