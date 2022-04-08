@@ -116,6 +116,9 @@ The link of the webpage is: https://siennameow.github.io/Work-Day-Scheduler/
 - Step 6 :Clear the local record by simply hit the delete button with icon of trash bin.
 
 
+Bonus:
+If you accidentally erase the textarea and hit save button, don't worry. When you refresh the page, your task will be shown on the webpage, until you click the delete button.
+
 ## Skill Improved 📚
 ✔️ Third party APIs\
 ✔️ Moment.js\
