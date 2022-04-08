@@ -25,26 +25,35 @@ for (var i = 0; i < hourLength; i++ ){
         hour.text((i+hourLength) + ":00")
 
         var userMessage = $("<textarea>");
-        userMessage.addClass("textarea col-10 description");
+        userMessage.addClass("textarea col-9 description");
 
         var saveBtn = $("<button>");
         saveBtn.addClass("saveBtn col-1");
 
-        var icon =$("<i>");
-        icon.addClass("far fa-save");
+        var iconSave =$("<i>");
+        iconSave.addClass("far fa-save");
+
+        var deleteBtn = $("<button>");
+        deleteBtn.addClass("deleteBtn col-1");
+        
+        var iconDelete = $("<i>");
+        iconDelete.addClass("fas fa-trash-alt");
 
 
-        saveBtn.append(icon);
+        saveBtn.append(iconSave);
+        deleteBtn.append(iconDelete)
         eventColumn.append(hour);
         eventColumn.append(userMessage);
         eventColumn.append(saveBtn);
+        eventColumn.append(deleteBtn)
         $(".container").append(eventColumn);
 }
 
 var hour = $(".hour");
 var saveBtn = $(".saveBtn");
 var eventColumn=$(".time-block")
-
+var deleteBtn = $(".deleteBtn")
+var userMessage = $(".textarea")
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
@@ -87,10 +96,18 @@ function saveInfo(n){
         var message =$(userMessage[n]).val();
         if( message!== "" ) {
         localStorage.setItem("Todo-" + (n+hour.length) +":00", message);
-    } else {
-        localStorage.removeItem("Todo-" + (n+hour.length) +":00");
-    }
+    } 
 })};
+
+//add function to delete user message from local storage 
+function deleteInfo (n){
+    $(deleteBtn[n]).on("click", function(event){
+        event.preventDefault();
+        localStorage.removeItem("Todo-" + (n+hour.length) +":00");
+        $(userMessage[n]).text(""); 
+    })
+};
+
 
 //WHEN I refresh the page
 // THEN the saved events persist
@@ -100,6 +117,7 @@ for (var i= 0;i<hour.length;i++){
     var userInput =localStorage.getItem("Todo-" + (i+hour.length)+":00");
     $(userMessage[i]).text(userInput); 
     saveInfo(i);
+    deleteInfo(i);
 }
     
     
