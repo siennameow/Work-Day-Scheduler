@@ -1,4 +1,5 @@
 # Work-Day-Scheduler
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/siennameow/Work-Day-Scheduler/blob/main/LICENSE)
 
 ## Description 📝 
 
@@ -138,6 +139,9 @@ If you accidentally erase the textarea and hit save button, don't worry. When yo
 * [Bootstrap](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
 * [Google Fonts](https://fonts.google.com//)
+
+## License 📜
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/siennameow/Work-Day-Scheduler/blob/main/LICENSE)
 
 ## Authors 👩
 
